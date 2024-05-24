@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,27 +7,39 @@
 
 header {
     background-color: #B0E0E6;
-    padding: 10px;
+    padding: 20px;
+    padding-left: 5px;
     overflow: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 3px solid #ddd;
+    height: 90px;
+}
+
+body {
+    background-color: #B0E0E6;
+    font-family: "PT Serif", serif;
+    margin: 0 auto;
 }
 
 .logo {
-    max-width: 100%;
+
     height: auto;
     width: 150px;
-    float: left;
 }
 
-.apresentacao {
+.principal {
     display: flex;
     flex-direction: column;
     text-align: center;
     max-width: 80%;
     margin: 0 auto;
+    
 }
 
 h1 {
-    font-size: 50px;
+    font-size: 70px;
     text-decoration: underline;
     margin-bottom: 20px;
 }
@@ -37,34 +51,83 @@ h2 {
 }
 
 p {
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .imagem_principal {
     display: block;
     margin: 20px auto;
 }
+
+.estilo_botao {
+    background-color: #022c6b;
+    border: #333;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    font-size: 20px;
+    margin: 20px auto;
+    cursor: pointer;
+    margin-top: 35px;
+}
+
+.estilo_botao_header {
+    background-color: #00b894;
+    border: 1px solid #00b894;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.info_header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-grow: 1;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.info_header p {
+    margin: 0;
+    border-bottom: 1px solid #007bff;
+}
+
+.info_header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.info_header a:hover {
+    background-color: grey;
+}
+
 .quadro {
     background-color: #f2f2f2;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
-    max-width: 500px; /* Reduzindo a largura máxima */
-    overflow-y: auto; /* Adicionando uma barra de rolagem vertical */
-    max-height: 400px; /* Definindo uma altura máxima para o quadro */
+    max-width: 500px;
+    overflow-y: auto;
+    max-height: 400px;
 }
 
 .quadro_informacao {
-    font-family: Arial, sans-serif;
+    font-family: "PT Serif", serif;
     line-height: 1.6;
     color: #333;
 }
 
 .quadro_informacao h3,
 .quadro_informacao h4 {
-    margin-bottom: 15px; /* Adicionando espaçamento entre os subtítulos e os textos */
-    font-size: 16px;
+    margin-bottom: 15px;
+    font-size: 18px;
 }
 
 .quadro_informacao p {
@@ -72,5 +135,108 @@ p {
 }
 
 .titulo_quadro {
-    margin-top: 20px;
+    margin-top: 40px;
+}
+
+.estilo_botao_header:hover {
+    background-color: #0984e3;
+    border-color: #0984e3;
+}
+
+.estilo_botao:hover {
+    background-color: #16c263;
+    border-color: #16c263;
+}
+@media only screen and (max-width: 600px) {
+    
+    header {
+        background-color: #B0E0E6;
+        padding: 2px 2px;
+        overflow: auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 3px solid #ddd;
+        height: 70px;
+    }
+    
+    .logo {
+
+        height: auto;
+        width: 80px;
+    }
+
+    .estilo_botao_header {
+        background-color: #00b894;
+        border: 1px solid #00b894;
+        border-radius: 5px;
+        color: white;
+        padding: 4px 5px;
+        text-decoration: none;
+        text-align: center;
+        font-size: 11px;
+        cursor: pointer;
+    }
+    
+    .info_header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        flex-grow: 1;
+        margin: 0 10px;
+    }
+    
+    .info_header p {
+        margin: 0 5px;
+        font-size: 12px;
+    }
+
+    .apresentacao {
+        max-width: 90%;
+    }
+
+    h1 {
+        font-size: 30px;
+    }
+
+    h2 {
+        font-size: 18px;
+        max-width: none;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    .imagem_principal {
+        margin: 20px auto;
+        width: 100%;
+        height: auto;
+    }
+
+    .estilo_botao {
+        padding: 8px 16px;
+        font-size: 14px;
+        margin-top: 20px;
+        border-radius: 5px;
+    }
+
+    .quadro {
+        max-width: 90%;
+        margin: 20px auto;
+    }
+
+    .titulo_quadro {
+        margin-top: 20px;
+    }
+
+    .estilo_botao_header:hover {
+        background-color: #0984e3;
+        border-color: #0984e3;
+    }
+    
+    .estilo_botao:hover {
+        background-color: #16c263;
+        border-color: #16c263;
+    }
 }
