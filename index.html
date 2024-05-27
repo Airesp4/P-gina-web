@@ -9,14 +9,14 @@
 </head>
 <body>
     <header>
-        <img class="logo" src="images/Logo_meio.jpg" alt="Logo">
+        <img class="logo" src="images/Logo.jpg" alt="Logo">
         <div class="info_header">
             <a href="#tratamento"><p>Tratamento</p></a>
             <a href="#saibamais"><p>Saiba Mais</p></a>
             <a href="#quemsomos"><p>Quem Somos?</p></a>
             <a href="#contato"><p>Contato</p></a>
         </div>
-        <button class="estilo_botao_header" id="rolarForm">Confira aqui &rarr;</button>
+        <button class="estilo_botao_header rolarForm">Confira aqui &rarr;</button>
     </header>
     <main class="principal">
         <section class="apresentacao">
@@ -26,7 +26,7 @@
                 principalmente
                 no tratamento do diabetes tipo 2, mas também tem sido estudado e utilizado para perda de peso em algumas
                 circunstâncias.</p>
-            <button class="estilo_botao">Consulte o tratamento &rarr;</button>
+            <button class="estilo_botao rolarForm">Consulte o tratamento &rarr;</button>
         </section>
         <img class="imagem_principal" src="images/imagem_topo.jpg" alt="imagem de topo">
         <h2 class="titulo_quadro">Quais informações devemos considerar? Como funciona o medicamento?
@@ -83,7 +83,7 @@
                     mas exigem atenção imediata e podem levar à suspensão do medicamento. A decisão de iniciar o tratamento com Ozempic
                     deve sempre ser tomada após uma cuidadosa avaliação dos riscos e benefícios, sob orientação médica.</p>
                 
-                <h3>Como Administrar Ozempic?</h3>
+                <h3 id="tratamento">Como Administrar Ozempic?</h3>
                 <h4>Dosagem e Administração</h4>
                 <p>A administração do Ozempic é feita através de injeções subcutâneas semanais, o que pode ser visto como uma vantagem
                     em comparação com medicamentos que requerem administração diária. A dose inicial é normalmente baixa, sendo
@@ -100,7 +100,7 @@
                 
                 <h3>Ozempic no Tratamento do Diabetes</h3>
                 
-                <h4>Eficácia no Controle Glicêmico</h4>
+                <h4 id="saibamais">Eficácia no Controle Glicêmico</h4>
                 <p>O controle eficaz da glicose é fundamental na gestão do diabetes tipo 2, e o Ozempic provou ser um aliado valioso
                     nessa tarefa. Estudos clínicos demonstraram que o medicamento pode reduzir significativamente os níveis de
                     hemoglobina glicada, um indicador do controle glicêmico ao longo do tempo. Além disso, muitos pacientes conseguem
@@ -128,6 +128,10 @@
                     para o sucesso do tratamento e para a saúde e bem-estar do paciente.</p>
             </div>
         </section>
+        <div class="ilustracao">
+            <img src="images/Ozempic1.png" alt="Ozempic" class="imagens">
+            <img src="images/Lab.jpg" alt="Laboratório" class="imagens">
+        </div>
         <h2>Confira aqui sua opção de tratamento:</h2>
         <div class="container" id="formulario">
             <h3>Informações do Usuário</h3>
@@ -145,6 +149,7 @@
             </form>
         </div>
     </main>
+    <div id="relatorio"></div>
     <script src="script.js"></script>
 </body>
 </html>
