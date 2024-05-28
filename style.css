@@ -157,6 +157,7 @@ p {
     max-height: 400px;
     text-align: center;
     margin-top: 30px;
+    margin-bottom: 50px;
 }
 
 form {
@@ -192,6 +193,30 @@ input {
     margin: 0 auto;
     width: 47%;
     margin-bottom: 30px;
+}
+
+footer {
+    background-color: #022c6b;
+}
+
+footer h2 {
+    color: #ccc;
+}
+
+footer p {
+    font-size: 20px;
+    color: #ccc;
+    text-align: center;
+}
+
+#quemsomos {
+    max-width: 100%;
+    font-size: 17px;
+}
+
+#contato {
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 @media only screen and (max-width: 600px) {
     
