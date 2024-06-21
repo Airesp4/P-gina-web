@@ -49,11 +49,11 @@ function gerarRelatorio(weight, height, age) {
         categoria = 'Sobrepeso';
         recomendacao =  'Abaixo consta um exemplo de como será administrado o medicamento,de acordo com os dados informados anteriormente.\n'+
                         'Consulte um especialista para a inicialização do tratamento!\n\n'+
-                        'Inicialmente aplicando a dose de 0.25 mg por semana durante 4 semanas para análise de adaptação do organismo.\n'+
+                        'Inicialmente aplicando a dose de 0.25 mg por dia durante 4 semanas para análise de adaptação do organismo.\n'+
                         'Espera-se que essa dose resultará em uma redução de ' + (reducao_025 * weight) + ' Kg com base no seu peso inicial.\n\n'+
-                        'Após 4 semanas aumentar a dose para 0.5mg por semana durante 4 semanas, resultando em uma redução de ' +
+                        'Após 4 semanas aumentar a dose para 0.5mg por dia durante 4 semanas, resultando em uma redução de ' +
                         (reducao_05*weight).toFixed(2) + ' Kg.\n\n'+
-                        'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por semana durante 17 meses \n'+
+                        'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por dia durante 17 meses \n'+
                         'que resultará em um redução total de ' + ((reducao_1 * weight) + (reducao_025 * weight) + (reducao_025)).toFixed(2) + " Kg ao final do período.\n\n"+
                         'Lembre-se que o medicamento só pode ser tomado com acompanhamento médico e prescrição, acompanhado de uma boa alimentação do paciente.';
 
@@ -61,11 +61,11 @@ function gerarRelatorio(weight, height, age) {
         categoria = 'Obesidade';
         recomendacao =  'Abaixo consta um exemplo de como será administrado o medicamento,de acordo com os dados informados anteriormente.\n'+
                         'Consulte um especialista para a inicialização do tratamento!\n\n'+
-                        'Inicialmente aplicando a dose de 0.25 mg por semana durante 4 semanas para análise de adaptação do organismo.\n'+
+                        'Inicialmente aplicando a dose de 0.25 mg por dia durante 4 semanas para análise de adaptação do organismo.\n'+
                         'Espera-se que essa dose resultará em uma redução de ' + (reducao_025 * weight) + ' Kg com base no seu peso inicial.\n\n'+
-                        'Após 4 semanas aumentar a dose para 0.5mg por semana durante 4 semanas, resultando em uma redução de ' +
+                        'Após 4 semanas aumentar a dose para 0.5mg por dia durante 4 semanas, resultando em uma redução de ' +
                         (reducao_05*weight).toFixed(2) + ' Kg.\n\n'+
-                        'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por semana durante 17 meses \n'+
+                        'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por dia durante 17 meses \n'+
                         'que resultará em um redução total de ' + ((reducao_1 * weight) + (reducao_025 * weight) + (reducao_025)).toFixed(2) + " Kg ao final do período.\n\n"+
                         'Lembre-se que o medicamento só pode ser tomado com acompanhamento médico e prescrição, acompanhado de uma boa alimentação do paciente.';
 
