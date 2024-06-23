@@ -14,7 +14,14 @@ document.addEventListener('DOMContentLoaded', function() {
         event.preventDefault();
 
         var weight = parseFloat(document.getElementById('weight').value);
-        var height = parseFloat(document.getElementById('height').value);
+        var heightInput = document.getElementById('height').value;
+
+        if (!/^\d,\d{2}$/.test(heightInput)) {
+            alert('Por favor, insira a altura no formato x,xx');
+            return;
+        }
+
+        var height = parseFloat(heightInput.replace(',', '.'));
         var age = parseInt(document.getElementById('age').value);
 
         var relatorio = gerarRelatorio(weight, height, age);
@@ -35,9 +42,9 @@ function gerarRelatorio(weight, height, age) {
     var imc = weight / Math.pow(height, 2);
     var categoria = '';
     var recomendacao = '';
-    var reducao_025 = 0.10/100;
-    var reducao_05 = 0.206/100;
-    var reducao_1 = 7/100;
+    var reducao_025 = 0.10 / 100;
+    var reducao_05 = 0.206 / 100;
+    var reducao_1 = 7 / 100;
 
     if (imc < 18.5) {
         categoria = 'Abaixo do peso';
@@ -47,38 +54,39 @@ function gerarRelatorio(weight, height, age) {
         recomendacao = 'Consulte um especialista para que possa averiguar a necessidade do tratamento!';
     } else if (imc >= 25 && imc < 30) {
         categoria = 'Sobrepeso';
-        recomendacao =  'Abaixo consta um exemplo de como será administrado o medicamento,de acordo com os dados informados anteriormente.\n'+
-                        'Consulte um especialista para a inicialização do tratamento!\n\n'+
-                        'Inicialmente aplicando a dose de 0.25 mg por dia durante 4 semanas para análise de adaptação do organismo.\n'+
-                        'Espera-se que essa dose resultará em uma redução de ' + (reducao_025 * weight) + ' Kg com base no seu peso inicial.\n\n'+
-                        'Após 4 semanas aumentar a dose para 0.5mg por dia durante 4 semanas, resultando em uma redução de ' +
-                        (reducao_05*weight).toFixed(2) + ' Kg.\n\n'+
-                        'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por dia durante 17 meses \n'+
-                        'que resultará em um redução total de ' + ((reducao_1 * weight) + (reducao_025 * weight) + (reducao_025)).toFixed(2) + " Kg ao final do período.\n\n"+
-                        'Lembre-se que o medicamento só pode ser tomado com acompanhamento médico e prescrição, acompanhado de uma boa alimentação do paciente.';
+        recomendacao = 'Abaixo consta um exemplo de como será administrado o medicamento, de acordo com os dados informados anteriormente.\n' +
+            'Consulte um especialista para a inicialização do tratamento!\n\n' +
+            'Inicialmente aplicando a dose de 0.25 mg por semana durante 4 semanas para análise de adaptação do organismo.\n' +
+            'Espera-se que essa dose resultará em uma redução de ' + (reducao_025 * weight) + ' Kg com base no seu peso inicial.\n\n' +
+            'Após 4 semanas aumentar a dose para 0.5mg por semana durante 4 semanas, resultando em uma redução de ' +
+            (reducao_05 * weight).toFixed(2) + ' Kg.\n\n' +
+            'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por semana durante 17 meses\n' +
+            'que resultará em um redução total de ' + ((reducao_1 * weight) + (reducao_025 * weight) + (reducao_025)).toFixed(2) + " Kg ao final do período.\n\n" +
+            'Lembre-se que o medicamento só pode ser tomado com acompanhamento médico e prescrição, acompanhado de uma boa alimentação do paciente.';
 
     } else {
         categoria = 'Obesidade';
-        recomendacao =  'Abaixo consta um exemplo de como será administrado o medicamento,de acordo com os dados informados anteriormente.\n'+
-                        'Consulte um especialista para a inicialização do tratamento!\n\n'+
-                        'Inicialmente aplicando a dose de 0.25 mg por dia durante 4 semanas para análise de adaptação do organismo.\n'+
-                        'Espera-se que essa dose resultará em uma redução de ' + (reducao_025 * weight) + ' Kg com base no seu peso inicial.\n\n'+
-                        'Após 4 semanas aumentar a dose para 0.5mg por dia durante 4 semanas, resultando em uma redução de ' +
-                        (reducao_05*weight).toFixed(2) + ' Kg.\n\n'+
-                        'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por dia durante 17 meses \n'+
-                        'que resultará em um redução total de ' + ((reducao_1 * weight) + (reducao_025 * weight) + (reducao_025)).toFixed(2) + " Kg ao final do período.\n\n"+
-                        'Lembre-se que o medicamento só pode ser tomado com acompanhamento médico e prescrição, acompanhado de uma boa alimentação do paciente.';
-
+        recomendacao = 'Abaixo consta um exemplo de como será administrado o medicamento, de acordo com os dados informados anteriormente.\n' +
+            'Consulte um especialista para a inicialização do tratamento!\n\n' +
+            'Inicialmente aplicando a dose de 0.25 mg por semana durante 4 semanas para análise de adaptação do organismo.\n' +
+            'Espera-se que essa dose resultará em uma redução de ' + (reducao_025 * weight) + ' Kg com base no seu peso inicial.\n\n' +
+            'Após 4 semanas aumentar a dose para 0.5mg por semana durante 4 semanas, resultando em uma redução de ' +
+            (reducao_05 * weight).toFixed(2) + ' Kg.\n\n' +
+            'Para continuação do tratamento, é indicado para perda de peso ajustar a dosagem para 1mg por semana durante 17 meses\n' +
+            'que resultará em um redução total de ' + ((reducao_1 * weight) + (reducao_025 * weight) + (reducao_025)).toFixed(2) + " Kg ao final do período.\n\n" +
+            'Lembre-se que o medicamento só pode ser tomado com acompanhamento médico e prescrição, acompanhado de uma boa alimentação do paciente.';
     }
 
     var relatorio = `Relatório de Informações do Usuário\n\n` +
-                    `Peso: ${weight} kg\n` +
-                    `Altura: ${height} m\n` +
-                    `Idade: ${age} anos\n` +
-                    `IMC: ${imc.toFixed(2)}\n` +
-                    `Categoria de IMC: ${categoria}\n\n` +
-                    `Recomendação: ${recomendacao}`;
+        `Peso: ${weight} kg\n` +
+        `Altura: ${height} m\n` +
+        `Idade: ${age} anos\n` +
+        `IMC: ${imc.toFixed(2)}\n` +
+        `Categoria de IMC: ${categoria}\n\n` +
+        `Recomendação: ${recomendacao}\n\n` +
+        `ESSE SITE FOI DESENVOLVIDO APENAS PARA FORNECER INFORMAÇÃO SOBRE O MEDICAMENTO. ` +
+        `NÃO SOMOS RESPONSÁVEIS POR PRESCRIÇÃO MÉDICA E NÃO INDUZIMOS A UTILIZAÇÃO DO MESMO.\n` +
+        `CASO TENHA SE INTERESSADO PELO TRATAMENTO, PROCURE UM PROFISSIONAL DA ÁREA!`;
 
     return relatorio;
 }
-

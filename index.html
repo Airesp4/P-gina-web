@@ -199,10 +199,10 @@
             <h3>Informações do Usuário</h3>
             <form id="user-info-form">
                 <label for="weight">Peso (kg):</label>
-                <input type="number" id="weight" name="weight" required>
+                <input type="number" id="weight" name="weight" step="0.01" required>
 
                 <label for="height">Altura (m):</label>
-                <input type="number" id="height" name="height" step="0.01" required>
+                <input type="text" id="height" name="height" pattern="\d,\d{2}" inputmode="decimal" required>
 
                 <label for="age">Idade:</label>
                 <input type="number" id="age" name="age" required>
@@ -219,7 +219,14 @@
         <p id="quemsomos">Somos a InfoMed, líderes em soluções farmacêuticas inovadoras e de alta qualidade. Nosso
             compromisso é com a saúde e bem-estar, oferecendo informação segura e eficaz para melhorar a vida das
             pessoas. Junte-se a nós em nossa missão por um mundo mais saudável.</p>
+    
+            <div style="text-align: center; margin-top: 10px;">
+                <p style="color: red;"><strong>Esse site foi desenvolvido apenas para fornecer informação sobre o medicamento.</strong></p>
+                <p style="color: red;"><strong>Não somos responsáveis por prescrição médica e não induzimos a utilização do mesmo.</strong></p>
+                <p style="color: red;"><strong>Caso tenha se interessado pelo tratamento, procure um profissional da área!</strong></p>
+            </div>
     </footer>
+    
 
     <script src="script.js"></script>
 </body>
